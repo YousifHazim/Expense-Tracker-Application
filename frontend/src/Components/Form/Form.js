@@ -6,9 +6,9 @@ import { useGlobalContext } from '../../context/globalContext';
 import Button from '../Button/Button';
 import { plus } from '../../utils/Icons';
 
-function Form(){
+function Form() {
 
-    const {addIncome,getIncomes} = useGlobalContext()
+    const { addIncome, getIncomes } = useGlobalContext()
     const [inputState, setInputState] = useState({
         title: '',
         amount: '',
@@ -17,23 +17,31 @@ function Form(){
         description: '',
     })
 
-    const {title, amount, date, category, description} = inputState;
+    const { title, amount, date, category, description } = inputState;
 
-    const handleInput = name => e =>{
-        setInputState({...inputState, [name]: e.target.value})
+    const handleInput = name => e => {
+        setInputState({ ...inputState, [name]: e.target.value })
     }
 
     const handleSubmit = e => {
         e.preventDefault()
         addIncome(inputState)
         getIncomes()
+        setInputState({
+            title: '',
+            amount: '',
+            date: '',
+            category: '',
+            description: ''
+        }
+        )
     }
 
     return (
         <FormStyled onSubmit={handleSubmit}>
             <div className="input-control">
-                <input 
-                    type = "text" 
+                <input
+                    type="text"
                     value={title}
                     name={'title'}
                     placeholder="Salary Title"
@@ -41,28 +49,28 @@ function Form(){
                 />
             </div>
             <div className="input-control">
-                <input value = {amount}
-                    type = "text" 
+                <input value={amount}
+                    type="text"
                     name={'amount'}
                     placeholder={'Salary Amount'}
                     onChange={handleInput('amount')}
                 />
             </div>
-            
+
             <div className="input-control">
-                 <DatePicker
-                   id = 'date'
-                   placeholderText='Enter A Date'
-                   selected={date}
-                   dateFormat="dd/MM/yyyy"
-                   onChange={(date) => {
-                      setInputState({...inputState, date: date})
+                <DatePicker
+                    id='date'
+                    placeholderText='Enter A Date'
+                    selected={date}
+                    dateFormat="dd/MM/yyyy"
+                    onChange={(date) => {
+                        setInputState({ ...inputState, date: date })
                     }}
-                 />
+                />
             </div>
 
             <div className="selects input-control">
-                <select required value = {category} name ="category" id="category" onChange={handleInput('category')}>
+                <select required value={category} name="category" id="category" onChange={handleInput('category')}>
                     <option value="" disabled >Select Option</option>
                     <option value="salary" >Salary</option>
                     <option value="freelancing">Freelancing</option>
@@ -75,10 +83,10 @@ function Form(){
                 </select>
             </div>
             <div className="input-control">
-                <textarea name="description" value ={description} placeholder = 'Add A Refernece' id="description" cols="30" rows="4" onChange={handleInput('description')}></textarea>
+                <textarea name="description" value={description} placeholder='Add A Refernece' id="description" cols="30" rows="4" onChange={handleInput('description')}></textarea>
             </div>
             <div className="submit-btn">
-            <Button 
+                <Button
                     name={'Add Income'}
                     icon={plus}
                     bPad={'.8rem 1.6rem'}
