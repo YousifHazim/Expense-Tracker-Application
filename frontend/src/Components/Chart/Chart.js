@@ -44,6 +44,7 @@ function Chart() {
                     })
                 ],
                 backgroundColor: 'green',
+                borderColor: 'gray', // Set the line color to white
                 tension: .2
             },
             {
@@ -55,6 +56,7 @@ function Chart() {
                     })
                 ],
                 backgroundColor: 'red',
+                borderColor: 'gray', // Set the line color to white
                 tension: .2
             }
         ]
