@@ -25,7 +25,7 @@ const ButtonStyled = styled.button`
     gap: .5rem;
     cursor: pointer;
     transition: all .4s ease-in-out;
+    color: var(--color-grey); /* Adjusted text color */
 `;
-
 
 export default Button

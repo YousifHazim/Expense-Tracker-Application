@@ -11,7 +11,7 @@ function Navigation({active, setActive}) {
             <div className="user-con">
                 <img src={avatar} alt="" />
                 <div className="text">
-                    <h2>Mike</h2>
+                    <h2>Dreamy</h2>
                     <p>Your Money</p>
                 </div>
             </div>
@@ -35,47 +35,46 @@ function Navigation({active, setActive}) {
         </NavStyled>
     )
 }
-
 const NavStyled = styled.nav`
     padding: 2rem 1.5rem;
     width: 374px;
     height: 100%;
-    background: rgba(252, 246, 249, 0.78);
-    border: 3px solid #FFFFFF;
+    background: rgba(26, 26, 26, 0.78); /* Change background color */
+    border: 3px solid var(--primary-color); /* Change border color */
     backdrop-filter: blur(4.5px);
     border-radius: 32px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 2rem;
-    .user-con{
+    .user-con {
         height: 100px;
         display: flex;
         align-items: center;
         gap: 1rem;
-        img{
+        img {
             width: 80px;
             height: 80px;
             border-radius: 50%;
             object-fit: cover;
-            background: #fcf6f9;
-            border: 2px solid #FFFFFF;
+            background: var(--color-grey); /* Change background color */
+            border: 2px solid var(--primary-color); /* Change border color */
             padding: .2rem;
             box-shadow: 0px 1px 17px rgba(0, 0, 0, 0.06);
         }
-        h2{
-            color: rgba(34, 34, 96, 1);
+        h2 {
+            color: var(--color-grey); /* Change text color */
         }
-        p{
-            color: rgba(34, 34, 96, .6);
+        p {
+            color: rgba(211, 211, 211, 0.6); /* Adjust text color */
         }
     }
 
-    .menu-items{
+    .menu-items {
         flex: 1;
         display: flex;
         flex-direction: column;
-        li{
+        li {
             display: grid;
             grid-template-columns: 40px auto;
             align-items: center;
@@ -83,30 +82,30 @@ const NavStyled = styled.nav`
             font-weight: 500;
             cursor: pointer;
             transition: all .4s ease-in-out;
-            color: rgba(34, 34, 96, .6);
+            color: rgba(211, 211, 211, 0.6); /* Adjust text color */
             padding-left: 1rem;
             position: relative;
-            i{
-                color: rgba(34, 34, 96, 0.6);
+            i {
+                color: rgba(211, 211, 211, 0.6); /* Adjust icon color */
                 font-size: 1.4rem;
                 transition: all .4s ease-in-out;
             }
         }
     }
 
-    .active{
-        color: rgba(34, 34, 96, 1) !important;
-        i{
-            color: rgba(34, 34, 96, 1) !important;
+    .active {
+        color: var(--color-grey) !important; /* Adjust active text color */
+        i {
+            color: var(--color-grey) !important; /* Adjust active icon color */
         }
-        &::before{
+        &::before {
             content: "";
             position: absolute;
             left: 0;
             top: 0;
             width: 4px;
             height: 100%;
-            background: #222260;
+            background: var(--color-accent); /* Change background color */
             border-radius: 0 10px 10px 0;
         }
     }

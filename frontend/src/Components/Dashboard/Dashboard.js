@@ -68,80 +68,76 @@ function Dashboard() {
         </DashboardStyled>
     )
 }
-
 const DashboardStyled = styled.div`
-    .stats-con{
+    .stats-con {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         gap: 2rem;
-        .chart-con{
+        .chart-con {
             grid-column: 1 / 4;
             height: 400px;
-            .amount-con{
+            .amount-con {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
                 gap: 2rem;
                 margin-top: 2rem;
-                .income, .expense{
+                .income, .expense {
                     grid-column: span 2;
-                }
-                .income, .expense, .balance{
-                    background: #FCF6F9;
-                    border: 2px solid #FFFFFF;
+                    background: rgba(26, 26, 26, 0.4); /* Adjusted background color */
+                    border: 3px solid var(--primary-color); /* Change border color */
                     box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
                     border-radius: 20px;
                     padding: 1rem;
-                    p{
+                    p {
                         font-size: 3.5rem;
                         font-weight: 700;
+                        color: var(--color-grey); /* Adjusted text color */
                     }
                 }
-
-                .balance{
+                .balance {
                     grid-column: 2 / 4;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    p{
-                        color: var(--color-green);
+                    p {
+                        color: var(--color-green); /* Adjusted text color */
                         opacity: 0.6;
                         font-size: 4.5rem;
                     }
                 }
             }
         }
-
-        .history-con{
+        .history-con {
             grid-column: 4 / -1;
-            h2{
+            h2 {
                 margin: 1rem 0;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
             }
-            .salary-title{
+            .salary-title {
                 font-size: 1.2rem;
-                span{
+                span {
                     font-size: 1.8rem;
                 }
             }
-            .salary-item{
-                background: #FCF6F9;
-                border: 2px solid #FFFFFF;
+            .salary-item {
+                background: rgba(26, 26, 26, 0.4); /* Adjusted background color */
+                border: 3px solid var(--primary-color); /* Change border color */
                 box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
                 padding: 1rem;
                 border-radius: 20px;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                p{
+                p {
                     font-weight: 600;
                     font-size: 1.6rem;
+                    color: var(--color-grey); /* Adjusted text color */
                 }
             }
         }
     }
 `;
-
 export default Dashboard
