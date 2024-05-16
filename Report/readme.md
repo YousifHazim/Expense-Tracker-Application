@@ -1,4 +1,4 @@
-# Expense Tracker Application
+# Expense Tracker Application Report
 
 ## UX and CX Study
 - **User Interface (UI) Design**: Clean and intuitive design for easy navigation.
